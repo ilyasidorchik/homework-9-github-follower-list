@@ -16,12 +16,19 @@ const isLoading = handleActions(
 
 const data = handleActions(
     {
-        [fetchSuccess]: (_state, action) => action.payload
+        [fetchRequest]: () => null,
+        [fetchSuccess]: (_state, action) => action.payload,
+        [fetchFailure]: (_state, action) => action.payload
     },
-    []
+    null
 );
 
 export default combineReducers({
     isLoading,
     data
 });
+
+
+// Selectors
+export const getIsLoading = (state) => state.followers.isLoading;
+export const getData = (state) => state.followers.data;
