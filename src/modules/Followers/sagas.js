@@ -14,7 +14,7 @@ export function* fetchFollowersFlow(action) {
   const apiKey = yield select(getApiKey);
 
   try {
-    const result = yield call(getFollowersInfo, apiKey, action.paylod);
+    const result = yield call(getFollowersInfo, apiKey, action.payload);
     yield put(fetchSuccess(result));
   }
   catch (error) {

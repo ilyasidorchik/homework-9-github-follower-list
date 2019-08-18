@@ -6,11 +6,11 @@ import { fetchRequest, fetchSuccess, fetchFailure } from './actions';
 // Обратите внимание на тесты, они помогут вам написать код редьюсера
 const isLoading = handleActions(
     {
-        [fetchRequest]: true,
-        [fetchSuccess]: false,
-        [fetchFailure]: false,
+        [fetchRequest]: () => true,
+        [fetchSuccess]: () => false,
+        [fetchFailure]: () => false
     },
-    false    
+    false
 );
 
 const data = handleActions(
